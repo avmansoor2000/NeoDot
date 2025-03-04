@@ -65,6 +65,111 @@
         url('fonts/inter-v12-latin-700.woff') format('woff');
       /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
     }
+
+
+
+    /* whatsapp */
+
+.btn-whatsapp-pulse {
+z-index: 9999;
+background: #25d366;
+color: white;
+position: fixed;
+bottom: 20px;
+right: 20px;
+font-size: 40px;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 0;
+height: 0;
+padding: 35px;
+text-decoration: none;
+border-radius: 50%;
+animation-name: pulse;
+animation-duration: 1.5s;
+animation-timing-function: ease-out;
+animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+0% {
+  box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+}
+80% {
+  box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+}
+}
+
+.btn-whatsapp-pulse-border {
+bottom: 80px;
+right: 20px;
+animation-play-state: paused;
+}
+
+.btn-whatsapp-pulse-border::before {
+content: "";
+position: absolute;
+border-radius: 50%;
+padding: 25px;
+border: 5px solid #25d366;
+opacity: 0.75;
+animation-name: pulse-border;
+animation-duration: 1.5s;
+animation-timing-function: ease-out;
+animation-iteration-count: infinite;
+}
+
+@keyframes pulse-border {
+0% {
+  padding: 25px;
+  opacity: 0.75;
+}
+75% {
+  padding: 50px;
+  opacity: 0;
+}
+100% {
+  opacity: 0;
+}
+}
+/* whatsapp end */
+
+@media (min-width: 1199px) {
+  .section-header p {
+    max-width: 60%;
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+  .row.d-flex.align-items-center {
+    flex-direction: column;
+  }
+
+  .col-6, .col-5, .offset-1 {
+    width: 100% !important;
+    max-width: 100%;
+    margin: 0 !important;
+    text-align: center; /* Centers content for better mobile UX */
+  }
+
+  .col-5 {
+    margin-top: 2rem;
+  }
+
+  .col-6 img {
+    width: 100%;
+    height: auto;
+  }
+
+  .col-12.col-lg-10.col-md-12.col-xl-8 {
+    margin-top: 1rem;
+  }
+}
+
   </style>
 
 
@@ -72,8 +177,9 @@
 
 <body class="bg-black text-white mt-0" data-bs-spy="scroll" data-bs-target="#navScroll">
 
+
   <nav id="navScroll" class="navbar navbar-dark bg-black fixed-top px-vw-5" tabindex="0">
-    <div class="container">
+    <div style="display: flex; align-items: flex-start; justify-content: flex-start;" class="container">
       <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="index.html">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-stack"
           viewBox="0 0 16 16">
@@ -82,7 +188,7 @@
           <path
             d="m14.12 6.576 1.715.858c.22.11.22.424 0 .534l-7.568 3.784a.598.598 0 0 1-.534 0L.165 7.968a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.659z" />
         </svg>
-        <span class="ms-md-1 mt-1 fw-bolder me-md-5">NeoDots</span>
+        <span  class="ms-md-1 mt-1 fw-bolder me-md-1">NeoDots</span>
       </a>
 
       <!-- <ul class="navbar-nav mx-auto mb-2 mb-lg-0 list-group list-group-horizontal">
@@ -110,7 +216,14 @@
     </div>
   </nav>
 
-  <main>
+  <main >
+          <!-- whatsapp -->
+  <!-- <strong>Phone:</strong> <a href="tel:+971544641726">+971 544641726</a><br> -->
+  <!-- <a href="https://wa.me/+917994729412 " class="btn-whatsapp-pulse btn-whatsapp-pulse-border" id="whatsappButton" role="button" aria-label="Call via WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a> -->
+
+  <!-- whatsapp end -->
     <div class="w-100 overflow-hidden position-relative bg-black text-white" data-aos="fade">
       <div class="position-absolute w-100 h-100 bg-black opacity-75 top-0 start-0"></div>
       <div class="container py-vh-4 position-relative mt-5 px-vw-5 text-center">
@@ -123,7 +236,7 @@
             <p class="lead text-secondary">At Neodots, we deliver cutting-edge software solutions, dynamic mobile apps, and impactful digital marketing strategies to help your business thrive in the digital era.</p>
           </div>
           <div class="col-12 text-center">
-            <a href="#" class="btn btn-xl btn-light">Contact us
+            <a href="https://api.whatsapp.com/send?phone=+917994729412&text=Hello,%20I%20would%20like%20to%20contact%20you!" class="btn btn-xl btn-light"class="btn btn-xl btn-light">Contact us
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-arrow-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
@@ -134,7 +247,7 @@
         </div>
       </div>
 
-    </div>
+    </div> 
 
     <div class="w-100 position-relative bg-black text-white bg-cover d-flex align-items-center">
      <!-- <div class="container-fluid px-vw-5">
@@ -282,11 +395,11 @@ Social Media Marketing: Build brand awareness through targeted campaigns. <br>
       </div>
 
     </div> -->
-    <div class="bg-dark position-relative">
+    <div class=" bg-dark position-relative">
       <div class="container px-vw-5 py-vh-5">
-        <div class="row d-flex align-items-center">
+        <div class=" row d-flex align-items-center">
 
-          <div class="col-12 col-lg-7">
+          <div class="col-12  col-lg-7">
             <img class="img-fluid rounded-5 mb-n5 shadow" src="public/About-1.jpg" width="512" height="512"
               alt="a nice person" loading="lazy" data-aos="zoom-in-right">
             <img class="img-fluid rounded-5 ms-5 mb-n5 shadow" src="public/About-2.jpg" width="512" height="512"
@@ -327,20 +440,20 @@ Social Media Marketing: Build brand awareness through targeted campaigns. <br>
       </div>
 
     </div> -->
-    <div class="container-fluid px-vw-5 position-relative" data-aos="fade">
+    <div class=" container-fluid px-vw-5 position-relative" data-aos="fade">
       <div class="position-absolute w-100 h-50 bg-black top-0 start-0"></div>
       <div class="position-relative py-vh-5 bg-cover bg-center rounded-5"
         style="background-image: url(img/webp/abstract12.webp)">
-        <div class="container bg-black px-vw-5 py-vh-3 rounded-5 shadow">
-          <div class="row d-flex align-items-center">
+        <div class=" container bg-black px-vw-5 py-vh-3 rounded-5 shadow">
+          <div class=" row d-flex align-items-center">
 
-            <div class="col-6 d-flex align-items-center bg-dark shadow rounded-5 p-0" data-aos="zoom-in-up">
-              <div class="row d-flex justify-content-center">
-                <div class="col-12">
+            <div class="col-6  d-flex align-items-center bg-dark shadow rounded-5 p-0" data-aos="zoom-in-up">
+              <div class="row  d-flex justify-content-center">
+                <div class="col-12 ">
                   <img src="public/Testimonials.jpg" width="684" height="457" alt="our CEO with some nice numbers"
                     class="img-fluid rounded-5" loading="lazy">
                 </div>
-                <div class="col-12 col-lg-10 col-xl-8 text-center my-5">
+                <div class="col-12 col-lg-10 col-md-12 col-xl-8 text-center my-5">
                   <p class="lead border-bottom pb-4 border-secondary">Ready to Transform Your Business?</p>
                   <p class="text-secondary text-center">Boost efficiency and growth with Neodots. We deliver tailored, innovative software solutions to elevate your business. Let’s build success together!  </p>
                 </div>
@@ -621,7 +734,14 @@ Social Media Marketing: Build brand awareness through targeted campaigns. <br>
 
 
 
+  <script>
+    document.getElementById("whatsappButton").addEventListener("click", function(event) {
+        // No need to prevent the default action as we're using the correct link
 
+        // Open the WhatsApp link for both mobile and desktop devices
+        window.open("https://wa.me/+917994729412", '_blank');
+    });
+</script>
 
 
   <script src="js/bootstrap.bundle.min.js"></script>
